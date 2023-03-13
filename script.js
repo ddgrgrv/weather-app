@@ -1,9 +1,9 @@
 const input = document.getElementById('city');
 const btn = document.getElementById('submit');
+const list = document.querySelector('list');
 
 async function getData(location){
     const APIKey = '564e0fa27920cea5846abce864ca5d29';
-    const city = 'London';
 
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${APIKey}&units=metric`)
 
@@ -12,10 +12,17 @@ async function getData(location){
     console.log(data);
 }
 
+function createItem(){
+    const item = document.createElement('li');
+    item.innerHTML = 'a';
+    list.append(item);
+
+}
+
 btn.addEventListener('click',(e)=> {
-   e.preventDefault();
+    e.preventDefault();
    
-   console.log(input.value);
-   getData(input.value);
+
 });
+
 

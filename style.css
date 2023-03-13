@@ -1,0 +1,60 @@
+body{
+    background: linear-gradient(168.44deg, #2E335A 1.62%,#45278B  95.72%);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+#city{
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px 0 5px 10px;
+    border: none;
+    margin-right: 10px;
+}
+#submit{
+    border: none;
+    background-color: transparent;
+    background-image: url(/img/icon.svg);
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.list{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.item{
+    width: 335px;
+    height: 185px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(/img/background.svg);
+    background-repeat: no-repeat;
+    align-items: flex-start;
+}
+.temp{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+}
+.city ,.weather{
+    color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+}
