@@ -1,3 +1,6 @@
+const input = document.getElementById('city');
+const btn = document.getElementById('submit');
+
 async function getData(location){
     const APIKey = '564e0fa27920cea5846abce864ca5d29';
     const city = 'London';
@@ -8,4 +11,11 @@ async function getData(location){
 
     console.log(data);
 }
-getData('Москва');
+
+btn.addEventListener('click',(e)=> {
+   e.preventDefault();
+   
+   console.log(input.value);
+   getData(input.value);
+});
+
