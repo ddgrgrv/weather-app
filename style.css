@@ -1,13 +1,19 @@
+:root{
+    --background-main:#FDFCFC;
+    --background-second: #e5e5e5;
+    --black: #2C2C2C;
+    --grey: #9A9A9A;
+    --white: #FFFFFF;
+}
 body{
-    background: linear-gradient(168.44deg, #2E335A 1.62%,#45278B  95.72%);
-    background-repeat: no-repeat;
+    background: var(--background-second);
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     
 }
 .form{
@@ -18,43 +24,49 @@ body{
     margin: 0 auto;
 }
 #city{
+    width: 40vw;
     border-radius: 10px;
     font-size: 20px;
     padding: 5px 0 5px 10px;
     border: none;
     margin-right: 10px;
+    background-color: var(--background-main);
 }
 #submit{
     border: none;
     background-color: transparent;
-    background-image: url(/img/icon.svg);
-    background-repeat: no-repeat;
     width: 16px;
     height: 16px;
 }
 .list{
+    width: 40vw;
     display: flex;
+    flex-direction: column;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 .item{
-    width: 335px;
-    height: 185px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background-image: url(/img/background.svg);
-    background-repeat: no-repeat;
-    align-items: flex-start;
+    padding: 25px 0 25px 20px;
+    background-color: var(--background-main);
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
-.temp{
-    color: #fff;
-    font-size: 30px;
+.inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--black);
+}
+.item__city{
+    font-size: 20px;
     font-weight: 600;
+    line-height: 30px;
 }
-.city ,.weather{
-    color: #fff;
-    font-size: 17px;
-    font-weight: 400;
+.item__temperature{
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 90px;
 }
