@@ -20,6 +20,8 @@ function createItem(data){
     const itemWind = document.createElement('span');
     const img = document.createElement('img');
     const desc = document.createElement('p');
+    const spanInner = document.createElement('div');
+    const imgInner = document.createElement('div');
 
     switch(data.weather[0].main){
         case 'Clear' : img.src = '/img/sunny.svg';
@@ -34,13 +36,18 @@ function createItem(data){
     itemCity.classList.add('item__city');
     inner.classList.add('inner');
     itemTemperature.classList.add('item__temperature');
+    spanInner.classList.add('flex');
+    imgInner.classList.add('flex');
+    img.classList.add('image');
 
     itemCity.innerHTML = data.name;
     itemTemperature.innerHTML = `${Math.round(data.main.temp)}°C`;
-    itemWind.innerHTML = `${Math.round(data.wind.speed)} м/с`;
+    itemWind.innerHTML = `wind speed: ${Math.round(data.wind.speed)} м/с`;
     desc.innerHTML = data.weather[0].description;
-
-    inner.append(itemTemperature, itemWind,img,desc);
+    
+    spanInner.append(itemTemperature,itemWind);
+    imgInner.append(img,desc);
+    inner.append(spanInner,imgInner);
     item.append(itemCity,inner);
 
     return item
@@ -56,8 +63,7 @@ btn.addEventListener('click',async function(e){
 
     list.append(item);
 
-    // console.log(data.weather[0].main === 'Clear');
-
+    input.value = '';
 });
 
 
