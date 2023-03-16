@@ -15,7 +15,7 @@ p{
     padding: 0;
 }
 .container{
-    width: 50vw;
+    width: 40vw;
     margin: 5vw auto;
 }
 .form{
@@ -28,22 +28,29 @@ p{
 #city{
     width: 100%;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 20px;
     padding: 5px 0 5px 10px;
     border: none;
-    margin-right: 10px;
     background-color: var(--background-main);
+    cursor: pointer;
 }
 #city:focus{ 
     outline: none;
 }
+#city:hover + #submit{ 
+    transform: translateX(-10px);
+}
+
 #submit{
     border: none;
+    position: absolute;
+    right: 35%;
     background-color: transparent;
     width: 16px;
     height: 16px;
     cursor: pointer;
+    transition: all 0.5s;
 }
 .list{
     width: 100%;
@@ -54,7 +61,7 @@ p{
     padding: 0;
 }
 .item{
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 25px 20px;
     background-color: var(--background-main);
@@ -85,4 +92,51 @@ p{
 .image{
     width: 100px;
     margin-bottom: 10px;
+}
+
+.b-show {
+    display: flex;
+    animation: showBlock 0.3s ease-in ;
+}
+
+@keyframes showBlock {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
+@media(min-width: 320px){
+    .container{
+        width: 90vw;
+    }
+    #submit{
+        right: 13%;
+    }
+}
+@media(min-width: 650px){
+    .container{
+        width: 70vw;
+    }
+    #submit{
+        right: 21%;
+    }
+}
+@media(min-width: 850px){
+    .container{
+        width: 50vw;
+    }
+    #submit{
+        right: 30%;
+    }
+}
+@media(min-width: 1000px){
+    .container{
+        width: 36vw;
+    }
+    #submit{
+        right: 35%;
+    }
 }
