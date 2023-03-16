@@ -17,13 +17,17 @@ function createItem(data){
     const itemCity = document.createElement('span');
     const inner = document.createElement('div');
     const itemTemperature = document.createElement('span');
+    const itemWind = document.createElement('span');
     const img = document.createElement('img');
+    const desc = document.createElement('p');
 
     switch(data.weather[0].main){
         case 'Clear' : img.src = '/img/sunny.svg';
+            break
         case 'Clouds' : img.src = '/img/cloudy.svg';
+            break
         case 'Rain' : img.src = '/img/rainy.svg';
-        // case 'Clear' : img.src = '/img/cloudy.svg';
+            break
     }
 
     item.classList.add('item');
@@ -32,9 +36,11 @@ function createItem(data){
     itemTemperature.classList.add('item__temperature');
 
     itemCity.innerHTML = data.name;
-    itemTemperature.innerHTML = data.main.temp;
+    itemTemperature.innerHTML = `${Math.round(data.main.temp)}°C`;
+    itemWind.innerHTML = `${Math.round(data.wind.speed)} м/с`;
+    desc.innerHTML = data.weather[0].description;
 
-    inner.append(itemTemperature,img);
+    inner.append(itemTemperature, itemWind,img,desc);
     item.append(itemCity,inner);
 
     return item
@@ -49,6 +55,8 @@ btn.addEventListener('click',async function(e){
     const item = createItem(weatherData);
 
     list.append(item);
+
+    // console.log(data.weather[0].main === 'Clear');
 
 });
 
