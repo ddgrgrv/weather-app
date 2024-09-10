@@ -1,2 +1,2 @@
 # weather-app
-## https://timely-belekoy-7d1229.netlify.app
+## https://weather-4cast-app.netlify.app/
